@@ -1,11 +1,9 @@
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$Logo.rotation_degrees = 90
-	
-func _process(delta):
-	$Logo.rotation_degrees += 60 * delta
-		
-	if $Logo.position.x > 1000:
-		$Logo.pos.x = 0
+
+func _on_area_2d_body_entered(body):
+	print("Player has entered the area")
+
+
+func _on_area_2d_body_exited(body):
+	print("Player has exited the area")
