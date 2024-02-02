@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 var speed = 500;
 
@@ -8,11 +8,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	
 	#Input
 	var direction = Input.get_vector("left", "right", "up", "down")
-	position += direction * delta * speed
+	velocity = direction * speed
+	move_and_slide()
 
 	#Shoot
 	if Input.is_action_pressed("primary action"):

@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqo1el6ir6wef"]
+[gd_scene load_steps=5 format=3 uid="uid://bqo1el6ir6wef"]
 
+[ext_resource type="PackedScene" uid="uid://doqbhle3aselb" path="res://scenes/objects/bed.tscn" id="2_nir5r"]
+[ext_resource type="PackedScene" uid="uid://nsrcp6sb5qhf" path="res://scenes/objects/Drone/drone.tscn" id="3_qoaxo"]
+[ext_resource type="PackedScene" uid="uid://gknixsxljgkc" path="res://scenes/objects/billboard.tscn" id="4_3grkp"]
 [ext_resource type="PackedScene" uid="uid://svmwgrkp35fo" path="res://scenes/player/player.tscn" id="4_smjv5"]
 
 [node name="Level" type="Node2D"]
 
+[node name="Bed" parent="." instance=ExtResource("2_nir5r")]
+position = Vector2(1057, 72)
+
 [node name="Player" parent="." instance=ExtResource("4_smjv5")]
 position = Vector2(573, 306)
+
+[node name="Drone" parent="." instance=ExtResource("3_qoaxo")]
+position = Vector2(10, 205)
+
+[node name="Billboard" parent="." instance=ExtResource("4_3grkp")]
+position = Vector2(602, 659)

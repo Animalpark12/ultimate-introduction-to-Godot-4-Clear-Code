@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://svmwgrkp35fo"]
+[gd_scene load_steps=4 format=3 uid="uid://svmwgrkp35fo"]
 
 [ext_resource type="Texture2D" uid="uid://bwcnwr1eiluix" path="res://graphics/player/player.png" id="1_0nww7"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_6upo2"]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_swp8s"]
+radius = 67.0298
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_6upo2")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
+position = Vector2(0, -34)
 texture = ExtResource("1_0nww7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_swp8s")
