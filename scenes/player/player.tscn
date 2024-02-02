@@ -24,5 +24,16 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
+[node name="ShootStartPositions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="ShootStartPositions"]
+position = Vector2(19, -128)
+
+[node name="Marker2D2" type="Marker2D" parent="ShootStartPositions"]
+position = Vector2(10, -125)
+
+[node name="Marker2D3" type="Marker2D" parent="ShootStartPositions"]
+position = Vector2(28, -125)
+
 [connection signal="timeout" from="ShootLReloadTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]
