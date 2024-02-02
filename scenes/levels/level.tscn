@@ -1,32 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqo1el6ir6wef"]
+[gd_scene load_steps=4 format=3 uid="uid://bqo1el6ir6wef"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_gqkai"]
-[ext_resource type="Texture2D" uid="uid://bwt074u2gcdt7" path="res://graphics/objects/gate.png" id="2_op3la"]
+[ext_resource type="PackedScene" uid="uid://bqilbddsmon2m" path="res://scenes/objects/gate/gate.tscn" id="3_3vmxv"]
 [ext_resource type="PackedScene" uid="uid://svmwgrkp35fo" path="res://scenes/player/player.tscn" id="4_smjv5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_35nq4"]
-size = Vector2(829, 291)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_gqkai")
 
-[node name="Gate" type="StaticBody2D" parent="."]
-
-[node name="Gate" type="Sprite2D" parent="Gate"]
-position = Vector2(541, -555)
-texture = ExtResource("2_op3la")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gate"]
-polygon = PackedVector2Array(-899, -1336, -897, -24, -889, 29, -871, 77, -851, 112, -826, 143, -768, 191, -717, 211, -673, 223, 170, 223, 167, -124, 1027, -127, 1030, 222, 1873, 223, 1989, 186, 2052, 116, 2075, 80, 2090, 43, 2100, -10, 2100, -1337)
-
-[node name="Area2D" type="Area2D" parent="Gate"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gate/Area2D"]
-position = Vector2(599.5, 166.5)
-shape = SubResource("RectangleShape2D_35nq4")
+[node name="Gate" parent="." instance=ExtResource("3_3vmxv")]
+position = Vector2(545, -545)
 
 [node name="Player" parent="." instance=ExtResource("4_smjv5")]
 position = Vector2(592, 420)
 
-[connection signal="body_entered" from="Gate/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Gate/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
+[connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
+[connection signal="laser" from="Player" to="." method="_on_player_laser"]
