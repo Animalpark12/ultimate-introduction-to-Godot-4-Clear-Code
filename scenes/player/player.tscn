@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://svmwgrkp35fo"]
+[gd_scene load_steps=9 format=3 uid="uid://svmwgrkp35fo"]
 
 [ext_resource type="Texture2D" uid="uid://bwcnwr1eiluix" path="res://graphics/player/player.png" id="1_0nww7"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_6upo2"]
@@ -23,6 +23,9 @@ gravity = Vector3(0, 0, 0)
 scale_min = 0.3
 scale_max = 0.8
 color_ramp = SubResource("GradientTexture1D_6t3xk")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jhbuq"]
+polygon = PackedVector2Array(78, -9, 86, -10, 89, -10, 93, -8, 96, -5, 98, -3, 105, -3, 109, -2, 112, 0, 113, 4, 124, 3, 126, 5, 125, 7, 124, 9, 124, 10, 127, 8, 130, 7, 133, 10, 134, 13, 135, 18, 135, 27, 134, 30, 132, 33, 129, 35, 126, 35, 124, 34, 123, 33, 123, 35, 124, 37, 124, 39, 113, 40, 111, 37, 109, 37, 108, 39, 106, 42, 103, 45, 100, 46, 98, 46, 98, 52, 97, 54, 94, 55, 63, 55, 60, 53, 59, 50, 59, 47, 60, 45, 62, 43, 46, 43, 44, 42, 43, 43, 41, 45, 39, 46, 36, 47, 33, 48, 29, 49, 26, 49, 23, 50, 20, 52, 18, 54, 16, 55, 13, 56, 8, 58, 4, 60, 0, 60, -4, 60, -6, 61, -11, 62, -14, 62, -17, 62, -23, 62, -27, 60, -30, 58, -33, 56, -35, 52, -36, 48, -38, 45, -41, 40, -42, 36, -45, 34, -47, 32, -49, 30, -51, 26, -52, 22, -51, 20, -50, 19, -50, 17, -52, 16, -55, 15, -57, 10, -58, 7, -59, 4, -59, -18, -58, -21, -56, -24, -54, -26, -53, -29, -52, -34, -50, -38, -46, -41, -42, -44, -38, -46, -33, -47, -30, -46, -29, -45, -27, -46, -27, -49, -24, -51, -20, -54, -15, -56, -11, -56, -10, -53, -6, -56, 0, -58, 6, -59, 12, -58, 13, -57, 20, -60, 26, -60, 29, -57, 32, -55, 34, -52, 36, -49, 37, -46, 40, -45, 42, -43, 45, -40, 46, -38, 46, -35, 48, -32, 50, -28, 55, -28, 58, -27, 61, -25, 65, -22, 71, -15)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
@@ -63,6 +66,9 @@ process_material = SubResource("ParticleProcessMaterial_chrsn")
 texture = ExtResource("3_lcjhx")
 lifetime = 0.15
 one_shot = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_jhbuq")
 
 [connection signal="timeout" from="ShootLReloadTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]
