@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 signal laser(pos, direction)
 signal grenade(pos, direction)
-signal update_stats
 
 @export var max_speed: int = 500
 
@@ -34,8 +33,8 @@ func _process(_delta):
 		laser.emit(selected_laser.global_position, player_direction)
 		
 	#Grenade
-	if Input.is_action_pressed("secondary action") and can_grenade and Globals.greanade_amount > 0:
-		Globals.greanade_amount -= 1
+	if Input.is_action_pressed("secondary action") and can_grenade and Globals.grenade_amount > 0:
+		Globals.grenade_amount -= 1
 		var pos = $ShootStartPositions.get_children()[0].global_position
 		can_grenade = false
 		
@@ -47,10 +46,3 @@ func _on_timer_timeout():
 
 func _on_grenade_reload_timer_timeout():
 	can_grenade = true
-
-func add_item(type: String) -> void:
-	if type == 'laser':
-		Globals.laser_amount += 5
-	elif type == 'grenade':
-		Globals.greanade_amount += 1
-	update_stats.emit()

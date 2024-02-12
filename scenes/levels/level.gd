@@ -28,8 +28,3 @@ func _on_house_player_entered():
 func _on_house_player_exited():
 	var tween = get_tree().create_tween()
 	tween.tween_property($Player/Camera2D, "zoom", Vector2(0.5,0.5), 1).set_trans(Tween.TRANS_CUBIC)
-
-
-func _on_player_update_stats():
-	$UI.updade_laser_text()
-	$UI.update_grenade_text()
