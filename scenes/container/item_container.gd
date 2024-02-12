@@ -1,6 +1,6 @@
 extends StaticBody2D
 class_name ItemContainer
 
-
-func hit():
-	print("object")
+signal open(pos, direction)
+var opened: bool = false
+@onready var current_direction: Vector2 = Vector2.DOWN.rotated(rotation)
