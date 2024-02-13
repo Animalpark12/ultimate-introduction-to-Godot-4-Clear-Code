@@ -9,6 +9,9 @@ var speed: int = max_speed
 var can_laser: bool = true
 var can_grenade: bool = true
 
+func hit():
+	print("player has hit")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	
@@ -17,6 +20,7 @@ func _process(_delta):
 	var player_direction = (get_global_mouse_position() - position).normalized()
 	velocity = direction * speed
 	move_and_slide()
+	Globals.player_pos = global_position
 
 	#Rotate
 	look_at(get_global_mouse_position())
