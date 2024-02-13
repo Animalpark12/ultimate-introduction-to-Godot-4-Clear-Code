@@ -29,11 +29,9 @@ region_enabled = true
 region_rect = Rect2(13.18, 14.9759, 151.753, 202.23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_6x10w")
 
 [node name="AttackArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
