@@ -1,9 +1,12 @@
-[gd_scene load_steps=36 format=3 uid="uid://3ucqs8vdga8p"]
+[gd_scene load_steps=39 format=3 uid="uid://3ucqs8vdga8p"]
 
 [ext_resource type="Texture2D" uid="uid://clakhxsf6rfya" path="res://graphics/tilesets/interior.png" id="1_6nxox"]
 [ext_resource type="Script" path="res://scenes/objects/houses/house.gd" id="1_iwou0"]
 [ext_resource type="PackedScene" uid="uid://byldigq21j5c4" path="res://scenes/objects/lights/simple_light.tscn" id="2_3mjbv"]
 [ext_resource type="PackedScene" uid="uid://bgfhb3xfbxjq8" path="res://scenes/objects/lights/wall_light.tscn" id="3_utbot"]
+[ext_resource type="PackedScene" uid="uid://chb6825ksf3oa" path="res://scenes/container/crate/crate.tscn" id="5_t4kok"]
+[ext_resource type="PackedScene" uid="uid://doqbhle3aselb" path="res://scenes/objects/bed.tscn" id="6_sbt4d"]
+[ext_resource type="PackedScene" uid="uid://sledvfauavoh" path="res://scenes/container/toilet/toilet.tscn" id="7_yyifb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpja4"]
 size = Vector2(4040, 2487)
@@ -334,6 +337,22 @@ position = Vector2(1982, 2040)
 
 [node name="WallLight2" parent="." instance=ExtResource("3_utbot")]
 position = Vector2(439, 2040)
+
+[node name="Crate" parent="." instance=ExtResource("5_t4kok")]
+position = Vector2(1755, 314)
+
+[node name="Crate2" parent="." instance=ExtResource("5_t4kok")]
+position = Vector2(3391, 314)
+
+[node name="Crate3" parent="." instance=ExtResource("5_t4kok")]
+position = Vector2(145, 314)
+
+[node name="Bed" parent="." instance=ExtResource("6_sbt4d")]
+position = Vector2(2176, 1196)
+
+[node name="Toilet" parent="." instance=ExtResource("7_yyifb")]
+position = Vector2(-37, 1196)
+rotation = -1.57079
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
