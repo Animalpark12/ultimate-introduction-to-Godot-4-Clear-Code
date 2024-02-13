@@ -53,10 +53,10 @@ one_shot = true
 position = Vector2(132, 21)
 
 [node name="Marker2D2" type="Marker2D" parent="ShootStartPositions"]
-position = Vector2(128, 13)
+position = Vector2(132, 13)
 
 [node name="Marker2D3" type="Marker2D" parent="ShootStartPositions"]
-position = Vector2(128, 29)
+position = Vector2(132, 29)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(132, 21)
@@ -69,6 +69,7 @@ one_shot = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_jhbuq")
+metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="ShootLReloadTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]
