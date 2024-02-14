@@ -260,7 +260,7 @@ position = Vector2(4354, 920)
 rotation = 1.57079
 
 [node name="Hunter" parent="Enemies" index="0" instance=ExtResource("17_h7ebj")]
-position = Vector2(4679, 2522)
+position = Vector2(1451, 1096)
 
 [node name="Player" parent="." index="7"]
 z_index = 2
@@ -272,7 +272,7 @@ curve = SubResource("Curve2D_f5mgv")
 
 [node name="Car" parent="CarPath" index="0" instance=ExtResource("16_gdrod")]
 position = Vector2(-393, 1781)
-rotation = 0.83854
+rotation = 0.838539
 
 [node name="LevelBarriers" type="Node2D" parent="." index="11"]
 
