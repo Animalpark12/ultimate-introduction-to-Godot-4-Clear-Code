@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqcgte2mcbosq"]
+[gd_scene load_steps=6 format=3 uid="uid://dqcgte2mcbosq"]
 
 [ext_resource type="Texture2D" uid="uid://bcmh5wu7x456b" path="res://graphics/items/orb2.png" id="1_s145m"]
 [ext_resource type="Script" path="res://scenes/items/item.gd" id="1_v6ejw"]
 [ext_resource type="Texture2D" uid="uid://danqh24hkmmk0" path="res://graphics/lights/textures/circle.png" id="2_ab6g2"]
+[ext_resource type="AudioStream" uid="uid://du71jqykwx5ro" path="res://audio/item.mp3" id="4_wvp1g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0y58a"]
 radius = 54.5894
@@ -21,5 +22,8 @@ shape = SubResource("CircleShape2D_0y58a")
 energy = 0.5
 texture = ExtResource("2_ab6g2")
 texture_scale = 0.4
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_wvp1g")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
